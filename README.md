@@ -72,3 +72,42 @@ The project uses:
 ## Academic Project
 
 Developed as part of the **Systems Programming** course at Ben-Gurion University.
+
+## How to Run
+
+### Server
+
+Compile the Java server:
+
+```bash
+cd server
+mvn compile
+```
+
+Run using Thread-Per-Client:
+
+```bash
+java -cp target/classes bgu.spl.net.impl.stomp.StompServer 7777 tpc
+```
+
+Or run using the Reactor model:
+
+```bash
+java -cp target/classes bgu.spl.net.impl.stomp.StompServer 7777 reactor 4
+```
+
+### Client
+
+Build the C++ client:
+
+```bash
+cd client
+mkdir -p bin
+make
+```
+
+Run the client:
+
+```bash
+./bin/StompWCIClient
+```
